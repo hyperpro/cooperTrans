@@ -22,7 +22,7 @@ int main(int agrc, char *agrv[])
 {
 
   LogComponentEnable ("OnOffApplication", LOG_LEVEL_INFO);
-  uint32_t maxBytes = 131072;
+  uint32_t maxBytes = 196608;
   //std::string AppPacketRate ("0.5Mbps");//??what it mean??
   //Config::SetDefault ("ns3::OnOffApplication::DataRate",  StringValue (AppPacketRate));
 
@@ -125,7 +125,7 @@ int main(int agrc, char *agrv[])
 
     phy.EnablePcapAll ("wifi-tcp-ffff", false);
     NS_LOG_INFO("Run Simulator!");
-    Simulator::Stop (Seconds (16.0));
+    Simulator::Stop (Seconds (5.0));
     Simulator::Run ();
     Simulator::Destroy ();
     NS_LOG_INFO("Done!");
