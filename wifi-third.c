@@ -193,15 +193,15 @@ int main (int argc, char *argv[])
 
   UdpClientHelper cellular_ap (p2pNodes1Interface.GetAddress (0), port1);
   cellular_ap.SetAttribute ("MaxPackets", UintegerValue (64707202));
-  cellular_ap.SetAttribute ("Interval", TimeValue (Time ("0.00004")));
+  cellular_ap.SetAttribute ("Interval", TimeValue (Time ("0.004")));
   cellular_ap.SetAttribute ("PacketSize", UintegerValue (1500));
   UdpClientHelper cellular_ap1 (p2pNodes2Interface.GetAddress (0), port1);
   cellular_ap1.SetAttribute ("MaxPackets", UintegerValue (64707202));
-  cellular_ap1.SetAttribute ("Interval", TimeValue (Time ("0.00005")));
+  cellular_ap1.SetAttribute ("Interval", TimeValue (Time ("0.005")));
   cellular_ap1.SetAttribute ("PacketSize", UintegerValue (1500));
   UdpClientHelper cellular_ap2 (p2pNodes3Interface.GetAddress (0), port1);
   cellular_ap2.SetAttribute ("MaxPackets", UintegerValue (64707202));
-  cellular_ap2.SetAttribute ("Interval", TimeValue (Time ("0.00002")));
+  cellular_ap2.SetAttribute ("Interval", TimeValue (Time ("0.002")));
   cellular_ap2.SetAttribute ("PacketSize", UintegerValue (1500));
   ApplicationContainer clientApps;
   clientApps.Add(cellular_ap.Install (p2pNodes1.Get (1)));
@@ -220,11 +220,11 @@ int main (int argc, char *argv[])
 
   UdpClientHelper wifiNodeCP1(cellularNodesInterfaces.GetAddress (0), port2);
   wifiNodeCP1.SetAttribute ("MaxPackets", UintegerValue (64707202));
-  wifiNodeCP1.SetAttribute ("Interval", TimeValue (Time ("0.00003")));
+  wifiNodeCP1.SetAttribute ("Interval", TimeValue (Time ("0.003")));
   wifiNodeCP1.SetAttribute ("PacketSize", UintegerValue (1500));
   UdpClientHelper wifiNodeCP2(cellularNodesInterfaces.GetAddress (0), port2);
   wifiNodeCP2.SetAttribute ("MaxPackets", UintegerValue (64707202));
-  wifiNodeCP2.SetAttribute ("Interval", TimeValue (Time ("0.00002")));
+  wifiNodeCP2.SetAttribute ("Interval", TimeValue (Time ("0.002")));
   wifiNodeCP2.SetAttribute ("PacketSize", UintegerValue (1500));
   ApplicationContainer wifiNodeCPApps;
   wifiNodeCPApps.Add(wifiNodeCP1.Install (cellularNode.Get (1)));
